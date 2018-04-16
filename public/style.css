@@ -26,7 +26,7 @@ form{
     align-items: center;
     justify-content: center;
     background-color: rgb(253, 109, 205);
-    height: 125px;
+    height: 100px;
 }
 
 .button{
@@ -48,4 +48,14 @@ form{
 .content img {
     width: 75%;
     margin: 5px auto;
+}
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
 }

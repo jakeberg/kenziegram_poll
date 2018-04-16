@@ -51,8 +51,24 @@ app.post('/upload', upload.single('myFile'), function (req, res, next) {
     // req.file is the `myFile` file
     // req.body will hold the text fields, if there were any
     console.log("Uploaded: " + req.file.filename);
+    
     uploaded_files.push(req.file.filename);
-    res.end("<a href='http://localhost:3000/photos'>Go to your photos! ");
+    res.end(`
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Kenziegram</title>
+    </head>
+    <body>
+    <header><h1>KENZIEGRAM</h1></header>
+    <div class="content">
+    <h1>File Uploaded!</h1>
+    <a href='http://localhost:3000/photos'>Click to go to your photos
+    <img src='${req.file.filename}' alt='pic'"></a>
+    </div>
+    </body>`);
 })
 
 
